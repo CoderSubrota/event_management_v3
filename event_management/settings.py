@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser'  
+AUTH_USER_MODEL = 'events.CustomUser'  
 
 
 WSGI_APPLICATION = 'event_management.wsgi.application'
@@ -110,7 +110,7 @@ AUTHENTICATION_BACKENDS = [
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://event_management_rl21_user:XnPaWuAtrRkdzhIwpIxJgdMPem05qSuF@dpg-cuar0k2n91rc738v11rg-a.oregon-postgres.render.com/event_management_rl21',
+        default='postgresql://event_management24_user:luc3Mywf1jbuDqUt8LNWlkC4lFMiMCa9@dpg-cur14ulds78s73842bkg-a.oregon-postgres.render.com/event_management24',
         conn_max_age=600
     )
 }

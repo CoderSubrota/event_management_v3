@@ -3,7 +3,7 @@ import re
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Permission, Group
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm
-from users.models import CustomUser
+from events.models import CustomUser
 from events.models import Add_Event_Model
 from django.contrib.auth import get_user_model
 

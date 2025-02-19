@@ -6,13 +6,11 @@ from django.contrib import messages
 from django.contrib import messages
 from users.forms import LoginForm
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Prefetch
 from django.contrib.auth.views import  LoginView, PasswordChangeView, PasswordResetView, PasswordResetConfirmView
 from django.views.generic import TemplateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
-from users.models import CustomUser
 from django.views.generic import CreateView,ListView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
