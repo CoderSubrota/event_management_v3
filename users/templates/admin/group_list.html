@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "cdn/cdn.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage users</title>
+</head>
+<body>
+    {% include "share/navbar.html" %}
+ 
+    <table style="width:80%;" class="table-auto mx-auto my-16 border-collapse border border-gray-200 shadow-lg rounded-lg text-left">
+        <thead class="bg-blue-500 text-white text-center rounded-lg">
+            <tr>
+                <th class="px-6 py-3 border border-gray-300 text-left">Group Name</th>
+                <th class="px-6 py-3 border border-gray-300 text-left">Permission</th>
+            </tr>
+        </thead>
+
+        <tbody class="bg-white divide-y divide-gray-200 rounded-lg">
+            {% for group in groups %}
+                <tr class="hover:bg-blue-100 transition">
+                    <td class="px-6 py-4 border border-gray-300">{{ group.name }}</td>
+                    <td class="px-6 py-4 border border-gray-300">
+                        <ul class="list-disc list-inside">
+                            {% for permission in group.permissions.all %}
+                                <li>
+                                    {{ permission.name }}
+                                </li>
+                            {% empty %}
+                                <li>No permissions found</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include "share/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "cdn/cdn.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    {% include "share/navbar.html" %} 
+    {% block content %}
+    <h1 class="text-2xl ms-4 font-bold my-4 text-white ">Event List</h1>
+   <table class="table-auto w-full my-14 border-collapse  text-blue-500 font-bold">
+        <thead class="text-white">
+            <tr class="bg-green-400">
+                <th class="border px-4 py-2">Name</th>
+                <th class="border px-4 py-2">Category</th>
+                <th class="border px-4 py-2">Date</th>
+                <th class="border px-4 py-2">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td class="border px-4 py-2">{{ event.name }}</td>
+                <td class="border px-4 py-2">{{ event.category.name }}</td>
+                <td class="border px-4 py-2">{{ event.date }}</td>
+                <td class="border px-4 py-2 text-center"> 
+
+                    <img src="{{ event.image.url|default:'https://i.pinimg.com/736x/ed/f0/1b/edf01be817dca367651fc74e43a3f2be.jpg' }}" alt="{{ event.name }}" class="h-20 w-20 rounded-full ring-4 ring-green-300">
+
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center py-4">No events found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+   
+    {% include "share/footer.html" %}
+</body>
+</html>

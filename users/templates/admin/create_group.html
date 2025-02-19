@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "cdn/cdn.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Group</title>
+</head>
+<body>
+{% include "share/navbar.html" %}
+
+   
+{% if messages %}
+{% for message in messages %}
+<p class="text-2xl text-center text-cyan-300 my-5">{{message}}</p>
+{% endfor %}
+{% endif %}
+
+<form method="post" class="max-w-2xl mx-auto my-16 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+    {% csrf_token %}
+
+    <div class="mb-4">
+        {{ form }}
+    </div>
+
+    <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition shadow-md">
+        Create Group
+    </button>
+</form>
+
+{% include "share/footer.html" %}
+</body>
+</html>

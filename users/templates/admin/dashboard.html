@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "cdn/cdn.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Manage users </title>
+</head>
+<body>
+    {% include "share/navbar.html" %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <p class="text-2xl text-center text-green-400 my-5">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+
+     <div class="mx-6">
+        {% include "admin/user_list.html" %}   
+
+     </div>
+    {% include "share/footer.html" %}
+</body>
+</html>
