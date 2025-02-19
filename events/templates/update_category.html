@@ -10,7 +10,7 @@
     {% include "share/navbar.html" %}
 
 
-    <form  method="post" class="mx-auto my-16 w-6/12 text-green-500 text-2xl font-bold">
+    <form  method="post" action="{% url 'category_update' %}" class="mx-auto my-16 w-6/12 text-green-500 text-2xl font-bold">
 
         {% csrf_token %}
           {{form}}

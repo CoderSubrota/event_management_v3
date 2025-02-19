@@ -9,7 +9,7 @@
 <body>
 {% include "share/navbar.html" %}
 
-<form method="post" class="max-w-md mx-auto my-16 bg-white p-6 rounded-lg shadow-md">
+<form method="post" action="{% url 'assign-role' %}" class="max-w-md mx-auto my-16 bg-white p-6 rounded-lg shadow-md">
     {% csrf_token %}
 
     <div class="mb-4">

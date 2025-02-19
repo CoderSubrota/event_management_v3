@@ -11,7 +11,7 @@
    
     <div class='w-6/12 mx-auto my-9 text-gray-700'>
         <div class="flex items-center justify-center min-h-screen">
-            <form method="POST" class="bg-white shadow-lg rounded-lg p-8 w-2xl" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'add_participant' %}" class="bg-white shadow-lg rounded-lg p-8 w-2xl" enctype="multipart/form-data">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4">Add Participant</h2>
                 {% csrf_token %}
                 <div class="space-y-4">

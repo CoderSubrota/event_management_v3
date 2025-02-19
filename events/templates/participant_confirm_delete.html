@@ -20,7 +20,7 @@
         This action cannot be undone, and any associated events will also be deleted.
     </p>
 
-    <form method="post" class="mt-8">
+    <form method="post" action="{% url 'participant_delete' %}" class="mt-8">
         {% csrf_token %}
         <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded-md mr-4 hover:cursor-pointer">
             Yes, Delete

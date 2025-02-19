@@ -16,7 +16,7 @@
 {% endfor %}
 {% endif %}
 
-<form method="post" class="max-w-2xl mx-auto my-16 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+<form method="post" action="{% url 'create-group' %}" class="max-w-2xl mx-auto my-16 bg-white p-6 rounded-lg shadow-md border border-gray-200">
     {% csrf_token %}
 
     <div class="mb-4">
