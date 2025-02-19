@@ -1,6 +1,6 @@
 import environ
 import os
-
+import dj_database_url
 
 # Initialize environ
 env = environ.Env()
@@ -94,26 +94,26 @@ AUTHENTICATION_BACKENDS = [
 
 # postgres sql database 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'events_management',   
-        'USER': 'postgres',
-        'PASSWORD': 'subrota12',
-        'HOST': 'localhost',  
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'events_management',   
+#         'USER': 'postgres',
+#         'PASSWORD': 'subrota12',
+#         'HOST': 'localhost',  
+#         'PORT': '5432',
+#     }
+# }
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # Replace this value with your local database's connection string.
-#         default='postgresql://event_management_rl21_user:XnPaWuAtrRkdzhIwpIxJgdMPem05qSuF@dpg-cuar0k2n91rc738v11rg-a.oregon-postgres.render.com/event_management_rl21',
-#         conn_max_age=600
-#     )
-# }
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://event_management_rl21_user:XnPaWuAtrRkdzhIwpIxJgdMPem05qSuF@dpg-cuar0k2n91rc738v11rg-a.oregon-postgres.render.com/event_management_rl21',
+        conn_max_age=600
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -134,14 +134,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://event-management-django-v2.onrender.com",
+    "https://event-management-v3.onrender.com",
 ]
 
 
 INTERNAL_IPS = [
     # ...
     "127.0.0.1",
-    "event-management-django-v2.onrender.com"
+    "event-management-v3.onrender.com"
     # ...
 ]
  
@@ -179,9 +179,9 @@ EMAIL_HOST_USER = "itsectorcommunication@gmail.com"
 EMAIL_HOST_PASSWORD = "eszs rxiu jvca wxff"
 EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
 
-FRONTEND_URL = "http://127.0.0.1:8000/" 
+# FRONTEND_URL = "http://127.0.0.1:8000/" 
 
-# FRONTEND_URL = "https://event-management-django-v2.onrender.com/" 
+FRONTEND_URL = "https://event-management-v3.onrender.com" 
 
 
 MEDIA_URL = '/media/'
